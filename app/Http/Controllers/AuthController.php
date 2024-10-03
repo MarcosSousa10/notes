@@ -32,7 +32,8 @@ class AuthController extends Controller
         $username = $request->input('text_username');
         $password = $request->input('text_password');
 
-        $users = User::all()->toArray();
+        $userModel = new User();
+        $users = $userModel->all()->toArray();
         echo '<pre>';
         print_r($users);
     }
