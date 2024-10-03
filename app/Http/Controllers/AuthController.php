@@ -46,8 +46,8 @@ class AuthController extends Controller
         $user->save();
 
         session([
-            'user' =>[
-                'id'=> $user->id,
+            'user' => [
+                'id' => $user->id,
                 'username' => $user->username
             ]
         ]);
@@ -56,6 +56,7 @@ class AuthController extends Controller
     }
     public function logout()
     {
-        echo "logout";
+        session()->forget('user');
+        return redirect()->to("/login");
     }
 }
