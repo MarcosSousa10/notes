@@ -51,8 +51,9 @@ class AuthController extends Controller
                 'username' => $user->username
             ]
         ]);
-        echo ('<pre>');
-        echo ($user);
+        return redirect()->to('/');
+     //   echo ('<pre>');
+       // echo ($user);
     }
     public function logout()
     {
